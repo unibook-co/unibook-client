@@ -3,7 +3,7 @@ export class SectionObject {
     title: string;
     bookId: number;
     notionPageId: string;
-    recordMap?: string;
+    recordMap?: any;
     cachedAt: string;
 
     constructor(data: {
@@ -11,7 +11,7 @@ export class SectionObject {
         title: string;
         bookId: number;
         notionPageId: string;
-        recordMap?: string;
+        recordMap?: any;
         cachedAt: string;
     }) {
         this.id = data.id;
