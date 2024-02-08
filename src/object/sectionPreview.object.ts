@@ -1,11 +1,8 @@
-import { SectionPreviewObject } from "./sectionPreview.object";
-
-export class SectionObject {
+export class SectionPreviewObject {
     id: number;
     title: string;
     bookId: number;
     notionPageId: string;
-    recordMap?: any;
     parent?: SectionPreviewObject;
     children?: SectionPreviewObject[];
     order: number;
@@ -16,7 +13,6 @@ export class SectionObject {
         title: string;
         bookId: number;
         notionPageId: string;
-        recordMap?: any;
         parent?: SectionPreviewObject;
         children?: SectionPreviewObject[];
         order: number;
@@ -26,7 +22,6 @@ export class SectionObject {
         this.title = data.title;
         this.bookId = data.bookId;
         this.notionPageId = data.notionPageId;
-        this.recordMap = data.recordMap;
         this.parent = data.parent;
         this.children = data.children;
         this.order = data.order;

@@ -1,5 +1,6 @@
 import { Endpoint } from "endpoint-client";
 import { SectionObject } from "../../object/section.object";
+import { SectionPreviewObject } from "../../object/sectionPreview.object";
 
 /**
  * GET /books/:bookId/sections
@@ -15,7 +16,7 @@ export type ListSectionReqPath = {
 };
 export type ListSectionReq = ListSectionReqPath;
 export type ListSectionRes = {
-    sections: SectionObject[];
+    sections: SectionPreviewObject[];
 };
 
 /**
@@ -52,11 +53,7 @@ export type FetchSectionReq = FetchSectionReqPath;
 export type LoadedFetchSectionItem = {
     status: "loaded";
     notionPageId: string;
-    section: {
-        id: number;
-        title: string;
-        cachedAt: Date;
-    };
+    section: SectionPreviewObject;
     page: {
         title: string;
         updatedAt: string;
@@ -73,11 +70,7 @@ export type NotLoadedFetchSectionItem = {
 export type NotFoundFetchSectionItem = {
     status: "not_found";
     notionPageId: string;
-    section: {
-        id: number;
-        title: string;
-        cachedAt: Date;
-    };
+    section: SectionPreviewObject;
 };
 export type FetchSectionItem =
     | LoadedFetchSectionItem
@@ -104,7 +97,27 @@ export type LoadSectionReq = LoadSectionReqPath & {
     notionPageId: string;
 };
 export type LoadSectionRes = {
-    section: SectionObject;
+    result: "added" | "updated" | "deleted";
+    section?: SectionPreviewObject;
+};
+
+/**
+ * PUT /books/:bookId/sections/:sectionId
+ * 책의 섹션을 수정합니다.
+ */
+export const UpdateSection: Endpoint<UpdateSectionReq, UpdateSectionRes> = {
+    method: "PUT",
+    path: (e) => `/books/${e.bookId}/sections/${e.sectionId}`,
+    pathParams: ["bookId", "sectionId"],
+    bodyParams: [],
+};
+export type UpdateSectionReqPath = {
+    bookId: number | string;
+    sectionId: number | string;
+};
+export type UpdateSectionReq = UpdateSectionReqPath & {};
+export type UpdateSectionRes = {
+    section: SectionPreviewObject;
 };
 
 /**

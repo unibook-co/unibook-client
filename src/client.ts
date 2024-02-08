@@ -2,18 +2,22 @@ import { EndpointClient } from "endpoint-client";
 import {
     AuthOAuthGoogle,
     CreateBook,
+    CreateBookmark,
     DeleteBook,
+    DeleteBookmark,
     DeleteSection,
     FetchSection,
     GetBook,
     GetSection,
     GetUser,
     ListBook,
+    ListBookmark,
     ListSection,
     ListUser,
     LoadSection,
     SearchUser,
     UpdateBook,
+    UpdateSection,
     UpdateUser,
 } from "./endpoint";
 
@@ -35,5 +39,10 @@ export class ProjectBookClient extends EndpointClient {
     readonly GetSection = this.endpointBuilder(GetSection);
     readonly FetchSection = this.endpointBuilder(FetchSection);
     readonly LoadSection = this.endpointBuilder(LoadSection);
+    readonly UpdateSection = this.endpointBuilder(UpdateSection);
     readonly DeleteSection = this.endpointBuilder(DeleteSection);
+
+    readonly ListBookmark = this.endpointBuilder(ListBookmark);
+    readonly CreateBookmark = this.endpointBuilder(CreateBookmark);
+    readonly DeleteBookmark = this.endpointBuilder(DeleteBookmark);
 }
