@@ -1,13 +1,15 @@
-import { SectionPreviewObject } from "./sectionPreview.object";
+import { AdminSectionPreviewObject } from "./adminSectionPreview.object";
 
-export class SectionObject {
+export class AdminSectionObject {
     id: number;
     title: string;
     bookId: number;
+    notionPageId: string;
     recordMap?: any;
-    parent?: SectionPreviewObject;
-    children?: SectionPreviewObject[];
+    parent?: AdminSectionPreviewObject;
+    children?: AdminSectionPreviewObject[];
     order: number;
+    isIntroduction: boolean;
     cachedAt: string;
 
     constructor(data: {
@@ -16,18 +18,21 @@ export class SectionObject {
         bookId: number;
         notionPageId: string;
         recordMap?: any;
-        parent?: SectionPreviewObject;
-        children?: SectionPreviewObject[];
+        parent?: AdminSectionPreviewObject;
+        children?: AdminSectionPreviewObject[];
         order: number;
+        isIntroduction: boolean;
         cachedAt: string;
     }) {
         this.id = data.id;
         this.title = data.title;
         this.bookId = data.bookId;
+        this.notionPageId = data.notionPageId;
         this.recordMap = data.recordMap;
         this.parent = data.parent;
         this.children = data.children;
         this.order = data.order;
+        this.isIntroduction = data.isIntroduction;
         this.cachedAt = data.cachedAt;
     }
 }

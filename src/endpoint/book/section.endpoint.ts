@@ -1,6 +1,7 @@
 import { Endpoint } from "endpoint-client";
 import { SectionObject } from "../../object/section.object";
 import { SectionPreviewObject } from "../../object/sectionPreview.object";
+import { AdminSectionPreviewObject } from "../../object/adminSectionPreview.object";
 
 /**
  * GET /books/:bookId/sections
@@ -38,6 +39,26 @@ export type GetSectionRes = {
 };
 
 /**
+ * GET /books/:bookId/sections/introduction
+ * 책의 소개 섹션을 조회합니다.
+ */
+export const GetIntroductionSection: Endpoint<
+    GetIntroductionSectionReq,
+    GetIntroductionSectionRes
+> = {
+    method: "GET",
+    path: (e) => `/books/${e.bookId}/sections/introduction`,
+    pathParams: ["bookId"],
+};
+export type GetIntroductionSectionReqPath = {
+    bookId: number | string;
+};
+export type GetIntroductionSectionReq = GetIntroductionSectionReqPath;
+export type GetIntroductionSectionRes = {
+    section?: SectionObject;
+};
+
+/**
  * GET /books/:bookId/sections/fetch
  * 노션 데이터베이스 내용과 함께 색션을 조회합니다
  */
@@ -53,7 +74,7 @@ export type FetchSectionReq = FetchSectionReqPath;
 export type LoadedFetchSectionItem = {
     status: "loaded";
     notionPageId: string;
-    section: SectionPreviewObject;
+    section: AdminSectionPreviewObject;
     page: {
         title: string;
         updatedAt: string;
@@ -70,7 +91,7 @@ export type NotLoadedFetchSectionItem = {
 export type NotFoundFetchSectionItem = {
     status: "not_found";
     notionPageId: string;
-    section: SectionPreviewObject;
+    section: AdminSectionPreviewObject;
 };
 export type FetchSectionItem =
     | LoadedFetchSectionItem
@@ -98,26 +119,29 @@ export type LoadSectionReq = LoadSectionReqPath & {
 };
 export type LoadSectionRes = {
     result: "added" | "updated" | "deleted";
-    section?: SectionPreviewObject;
+    section?: AdminSectionPreviewObject;
 };
 
 /**
- * PUT /books/:bookId/sections/:sectionId
+ * PATCH /books/:bookId/sections/:sectionId
  * 책의 섹션을 수정합니다.
  */
 export const UpdateSection: Endpoint<UpdateSectionReq, UpdateSectionRes> = {
-    method: "PUT",
+    method: "PATCH",
     path: (e) => `/books/${e.bookId}/sections/${e.sectionId}`,
     pathParams: ["bookId", "sectionId"],
-    bodyParams: [],
+    bodyParams: ["isIntroduction"],
 };
 export type UpdateSectionReqPath = {
     bookId: number | string;
     sectionId: number | string;
 };
-export type UpdateSectionReq = UpdateSectionReqPath & {};
+export type UpdateSectionReqBody = {
+    isIntroduction?: boolean;
+};
+export type UpdateSectionReq = UpdateSectionReqPath & UpdateSectionReqBody;
 export type UpdateSectionRes = {
-    section: SectionPreviewObject;
+    section: AdminSectionPreviewObject;
 };
 
 /**

@@ -1,5 +1,6 @@
 export class UserObject {
     id: number;
+    uuid: string;
     name: string;
     email: string;
     profileImage: string;
@@ -9,6 +10,7 @@ export class UserObject {
 
     constructor(data: {
         id: number;
+        uuid: string;
         name: string;
         email: string;
         profileImage: string;
@@ -17,6 +19,7 @@ export class UserObject {
         updatedAt: string;
     }) {
         this.id = data.id;
+        this.uuid = data.uuid;
         this.name = data.name;
         this.email = data.email;
         this.profileImage = data.profileImage;

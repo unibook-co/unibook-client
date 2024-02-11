@@ -1,5 +1,6 @@
 import { Endpoint } from "endpoint-client";
 import { BookObject } from "../object";
+import { AdminBookObject } from "../object/adminBook.object";
 
 /**
  * GET /books
@@ -32,6 +33,40 @@ export type GetBookRes = {
 };
 
 /**
+ * GET /books/:bookId/admin
+ * 책을 조회합니다.
+ */
+export const GetAdminBook: Endpoint<GetAdminBookReq, GetAdminBookRes> = {
+    method: "GET",
+    path: (e) => `/books/${e.bookId}/admin`,
+    pathParams: ["bookId"],
+};
+export type GetAdminBookReqPath = {
+    bookId: number | string;
+};
+export type GetAdminBookReq = GetAdminBookReqPath;
+export type GetAdminBookRes = {
+    book: AdminBookObject;
+};
+
+/**
+ * GET /books/:bookId/search
+ * 책을 검색합니다.
+ */
+export const SearchBook: Endpoint<SearchBookReq, SearchBookRes> = {
+    method: "GET",
+    path: (e) => `/books/search`,
+    queryParams: ["query"],
+};
+export type SearchBookReqQuery = {
+    query: string;
+};
+export type SearchBookReq = SearchBookReqQuery;
+export type SearchBookRes = {
+    books: BookObject[];
+};
+
+/**
  * POST /books
  * 책을 생성합니다.
  */
@@ -42,6 +77,7 @@ export const CreateBook: Endpoint<CreateBookReq, CreateBookRes> = {
         "title",
         "author",
         "description",
+        "price",
         "coverImage",
         "notionDatabaseId",
     ],
@@ -50,12 +86,13 @@ export type CreateBookReqBody = {
     title: string;
     author: string;
     description: string;
+    price: number;
     coverImage: string;
     notionDatabaseId: string;
 };
 export type CreateBookReq = CreateBookReqBody;
 export type CreateBookRes = {
-    book: BookObject;
+    book: AdminBookObject;
 };
 
 /**
@@ -70,6 +107,7 @@ export const UpdateBook: Endpoint<UpdateBookReq, UpdateBookRes> = {
         "title",
         "author",
         "description",
+        "price",
         "coverImage",
         "notionDatabaseId",
         "status",
@@ -82,13 +120,14 @@ export type UpdateBookReqBody = {
     title?: string;
     author?: string;
     description?: string;
+    price?: number;
     coverImage?: string;
     notionDatabaseId?: string;
     status?: "draft" | "pending" | "published" | "deleted";
 };
 export type UpdateBookReq = UpdateBookReqPath & UpdateBookReqBody;
 export type UpdateBookRes = {
-    book: BookObject;
+    book: AdminBookObject;
 };
 
 /**
