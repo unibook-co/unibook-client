@@ -22,6 +22,7 @@ import {
     ListSection,
     ListUser,
     ListUserBook,
+    ListUserOrder,
     LoadSection,
     SearchBook,
     SearchUser,
@@ -39,6 +40,7 @@ export class ProjectBookClient extends EndpointClient {
     readonly CreateUserOrder = this.endpointBuilder(CreateUserOrder);
     readonly ApproveUserOrder = this.endpointBuilder(ApproveUserOrder);
     readonly CancelUserOrder = this.endpointBuilder(CancelUserOrder);
+    readonly ListUserOrder = this.endpointBuilder(ListUserOrder);
 
     readonly ListUserBook = this.endpointBuilder(ListUserBook);
 

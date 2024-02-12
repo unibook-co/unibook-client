@@ -12,7 +12,7 @@ export class OrderObject {
     requestedAt?: Date;
     approvedAt?: Date;
     receiptUrl?: string;
-    status: "in_progress" | "pending" | "done" | "cancelled" | "expired";
+    status: "in_progress" | "pending" | "done" | "canceled" | "expired";
 
     user?: UserObject;
     book?: BookObject;
@@ -28,7 +28,7 @@ export class OrderObject {
         requestedAt?: Date;
         approvedAt?: Date;
         receiptUrl?: string;
-        status: "in_progress" | "pending" | "done" | "cancelled" | "expired";
+        status: "in_progress" | "pending" | "done" | "canceled" | "expired";
         user?: UserObject;
         book?: BookObject;
     }) {

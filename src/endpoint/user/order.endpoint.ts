@@ -80,3 +80,25 @@ export type CancelUserOrderResError = {
     code: string;
     message: string;
 };
+
+/**
+ * GET /users/:userId/orders
+ * 주문 목록을 조회합니다.
+ */
+export const ListUserOrder: Endpoint<ListUserOrderReq, ListUserOrderRes> = {
+    method: "GET",
+    path: (e) => `/users/${e.userId}/orders`,
+    pathParams: ["userId"],
+    queryParams: ["page", "take"],
+};
+export type ListUserOrderReqPath = {
+    userId: number | string;
+};
+export type ListUserOrderReq = ListUserOrderReqPath & {
+    page?: number;
+    take?: number;
+};
+export type ListUserOrderRes = {
+    orders: OrderObject[];
+    total: number;
+};
