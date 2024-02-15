@@ -1,5 +1,5 @@
 import { Endpoint } from "endpoint-client";
-import { UserObject } from "../object/user.object";
+import { UserObject } from "../../object/user.object";
 
 /**
  * GET /users

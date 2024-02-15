@@ -6,3 +6,5 @@ export * from "./adminBook.object";
 export * from "./adminSectionPreview.object";
 export * from "./adminSection.object";
 export * from "./order.object";
+export * from "./blockComment.object";
+export * from "./blockCommentReaction.object";

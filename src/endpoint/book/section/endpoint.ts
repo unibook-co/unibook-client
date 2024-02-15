@@ -1,7 +1,7 @@
 import { Endpoint } from "endpoint-client";
-import { SectionObject } from "../../object/section.object";
-import { SectionPreviewObject } from "../../object/sectionPreview.object";
-import { AdminSectionPreviewObject } from "../../object/adminSectionPreview.object";
+import { SectionObject } from "../../../object/section.object";
+import { SectionPreviewObject } from "../../../object/sectionPreview.object";
+import { AdminSectionPreviewObject } from "../../../object/adminSectionPreview.object";
 
 /**
  * GET /books/:bookId/sections

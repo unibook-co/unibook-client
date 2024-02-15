@@ -3,12 +3,17 @@ import {
     ApproveUserOrder,
     AuthOAuthGoogle,
     CancelUserOrder,
+    CreateBlockComment,
+    CreateBlockCommentReaction,
     CreateBook,
     CreateBookmark,
     CreateUserOrder,
+    DeleteBlockComment,
+    DeleteBlockCommentReaction,
     DeleteBook,
     DeleteBookmark,
     DeleteSection,
+    EditBlockComment,
     FetchSection,
     GetAdminBook,
     GetBook,
@@ -16,6 +21,8 @@ import {
     GetOrder,
     GetSection,
     GetUser,
+    ListBlockComment,
+    ListBlockCommentReaction,
     ListBook,
     ListBookmark,
     ListOrder,
@@ -63,6 +70,21 @@ export class ProjectBookClient extends EndpointClient {
     readonly LoadSection = this.endpointBuilder(LoadSection);
     readonly UpdateSection = this.endpointBuilder(UpdateSection);
     readonly DeleteSection = this.endpointBuilder(DeleteSection);
+
+    readonly ListBlockComment = this.endpointBuilder(ListBlockComment);
+    readonly CreateBlockComment = this.endpointBuilder(CreateBlockComment);
+    readonly EditBlockComment = this.endpointBuilder(EditBlockComment);
+    readonly DeleteBlockComment = this.endpointBuilder(DeleteBlockComment);
+
+    readonly ListBlockCommentReaction = this.endpointBuilder(
+        ListBlockCommentReaction
+    );
+    readonly CreateBlockCommentReaction = this.endpointBuilder(
+        CreateBlockCommentReaction
+    );
+    readonly DeleteBlockCommentReaction = this.endpointBuilder(
+        DeleteBlockCommentReaction
+    );
 
     readonly ListBookmark = this.endpointBuilder(ListBookmark);
     readonly CreateBookmark = this.endpointBuilder(CreateBookmark);

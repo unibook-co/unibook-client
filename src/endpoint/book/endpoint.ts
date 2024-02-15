@@ -1,6 +1,6 @@
 import { Endpoint } from "endpoint-client";
-import { BookObject } from "../object";
-import { AdminBookObject } from "../object/adminBook.object";
+import { BookObject } from "../../object";
+import { AdminBookObject } from "../../object/adminBook.object";
 
 /**
  * GET /books
