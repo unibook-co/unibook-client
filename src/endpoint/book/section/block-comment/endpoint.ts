@@ -1,5 +1,6 @@
 import { Endpoint } from "endpoint-client";
 import { BlockCommentObject } from "../../../../object";
+import { ParentBlockCommentObject } from "../../../../object/parentBlockComment.object";
 
 /**
  * GET /books/:bookId/sections/:sectionId/block-comments
@@ -20,7 +21,7 @@ export type ListBlockCommentReqPath = {
 };
 export type ListBlockCommentReq = ListBlockCommentReqPath;
 export type ListBlockCommentRes = {
-    comments: BlockCommentObject[];
+    comments: ParentBlockCommentObject[];
 };
 
 /**
@@ -45,7 +46,7 @@ export type CreateBlockCommentReqBody = {
     blockId: string;
     content: string;
     type: "comment" | "question";
-    parentId?: string;
+    parentId?: number;
 };
 export type CreateBlockCommentReq = CreateBlockCommentReqPath &
     CreateBlockCommentReqBody;
@@ -54,7 +55,7 @@ export type CreateBlockCommentRes = {
 };
 
 /**
- * PATCH /books/:bookId/sections/:sectionId/block-comments/:commentId
+ * PATCH /books/:bookId/sections/:sectionId/block-comments/:blockCommentId
  * 블록 댓글을 수정합니다.
  */
 export const EditBlockComment: Endpoint<
@@ -63,14 +64,14 @@ export const EditBlockComment: Endpoint<
 > = {
     method: "PATCH",
     path: (req) =>
-        `/books/${req.bookId}/sections/${req.sectionId}/block-comments/${req.commentId}`,
-    pathParams: ["bookId", "sectionId", "commentId"],
+        `/books/${req.bookId}/sections/${req.sectionId}/block-comments/${req.blockCommentId}`,
+    pathParams: ["bookId", "sectionId", "blockCommentId"],
     bodyParams: ["content"],
 };
 export type EditBlockCommentReqPath = {
     bookId: number | string;
     sectionId: number | string;
-    commentId: number | string;
+    blockCommentId: number | string;
 };
 export type EditBlockCommentReqBody = {
     content: string;
@@ -82,7 +83,7 @@ export type EditBlockCommentRes = {
 };
 
 /**
- * DELETE /books/:bookId/sections/:sectionId/block-comments/:commentId
+ * DELETE /books/:bookId/sections/:sectionId/block-comments/:blockCommentId
  * 블록 댓글을 삭제합니다.
  */
 export const DeleteBlockComment: Endpoint<
@@ -91,13 +92,13 @@ export const DeleteBlockComment: Endpoint<
 > = {
     method: "DELETE",
     path: (req) =>
-        `/books/${req.bookId}/sections/${req.sectionId}/block-comments/${req.commentId}`,
-    pathParams: ["bookId", "sectionId", "commentId"],
+        `/books/${req.bookId}/sections/${req.sectionId}/block-comments/${req.blockCommentId}`,
+    pathParams: ["bookId", "sectionId", "blockCommentId"],
 };
 export type DeleteBlockCommentReqPath = {
     bookId: number | string;
     sectionId: number | string;
-    commentId: number | string;
+    blockCommentId: number | string;
 };
 export type DeleteBlockCommentReq = DeleteBlockCommentReqPath;
 export type DeleteBlockCommentRes = {

@@ -1,7 +1,8 @@
 import { BlockCommentReactionObject } from "./blockCommentReaction.object";
+import { ChildBlockCommentObject } from "./childBlockComment.object";
 import { UserObject } from "./user.object";
 
-export class BlockCommentObject {
+export class ParentBlockCommentObject {
     id: number;
     bookId: number;
     sectionId: number;
@@ -11,8 +12,7 @@ export class BlockCommentObject {
     type: "comment" | "question";
     reactions: BlockCommentReactionObject[];
     user: UserObject;
-    parent?: BlockCommentObject;
-    children?: BlockCommentObject[];
+    children: ChildBlockCommentObject[];
     createdAt: string;
     updatedAt: string;
 
@@ -24,8 +24,7 @@ export class BlockCommentObject {
         content: string;
         isEdited: boolean;
         type: "comment" | "question";
-        parent: BlockCommentObject;
-        children: BlockCommentObject[];
+        children: ChildBlockCommentObject[];
         reactions: BlockCommentReactionObject[];
         user: UserObject;
         createdAt: string;
@@ -38,7 +37,6 @@ export class BlockCommentObject {
         this.content = data.content;
         this.isEdited = data.isEdited;
         this.type = data.type;
-        this.parent = data.parent;
         this.children = data.children;
         this.reactions = data.reactions;
         this.user = data.user;

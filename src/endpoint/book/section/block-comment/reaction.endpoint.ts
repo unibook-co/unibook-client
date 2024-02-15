@@ -18,7 +18,7 @@ export const ListBlockCommentReaction: Endpoint<
 export type ListBlockCommentReactionReqPath = {
     bookId: number | string;
     sectionId: number | string;
-    blockCommentId: string;
+    blockCommentId: number;
 };
 export type ListBlockCommentReactionReq = ListBlockCommentReactionReqPath;
 export type ListBlockCommentReactionRes = {
@@ -42,7 +42,7 @@ export const CreateBlockCommentReaction: Endpoint<
 export type CreateBlockCommentReactionReqPath = {
     bookId: number | string;
     sectionId: number | string;
-    blockCommentId: string;
+    blockCommentId: number;
 };
 export type CreateBlockCommentReactionReqBody = {
     reaction: string;
@@ -69,8 +69,8 @@ export const DeleteBlockCommentReaction: Endpoint<
 export type DeleteBlockCommentReactionReqPath = {
     bookId: number | string;
     sectionId: number | string;
-    blockCommentId: string;
-    reactionId: string;
+    blockCommentId: number;
+    reactionId: number;
 };
 export type DeleteBlockCommentReactionReq = DeleteBlockCommentReactionReqPath;
 export type DeleteBlockCommentReactionRes = {};
