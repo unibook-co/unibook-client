@@ -1,7 +1,7 @@
 {
-    "name": "project-book-client",
+    "name": "unibook-client",
     "version": "1.0.38",
-    "repository": "https://github.com/HyunsDev/project-book-client.git",
+    "repository": "https://github.com/HyunsDev/unibook-client.git",
     "author": "혀느현스 <hyuns@hyuns.dev>",
     "license": "Unlicense",
     "module": "dist/index.js",
