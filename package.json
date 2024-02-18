@@ -1,12 +1,13 @@
 {
     "name": "unibook-client",
-    "version": "1.0.38",
+    "version": "1.0.0",
     "repository": "https://github.com/HyunsDev/unibook-client.git",
     "author": "혀느현스 <hyuns@hyuns.dev>",
     "license": "Unlicense",
     "module": "dist/index.js",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
+    "private": false,
     "scripts": {
         "build": "cross-env rimraf dist && mkdir dist && babel src -d dist --copy-files --extensions \".ts\" --no-copy-ignored && tsc --p tsconfig.module.json",
         "lint": "eslint \"src/**/*.{ts,js}\"",
