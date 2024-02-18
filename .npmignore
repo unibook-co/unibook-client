@@ -153,5 +153,4 @@ yarn-error.log*
 /.vscode
 .vscode/settings.json
 
-assets
 node_modules
