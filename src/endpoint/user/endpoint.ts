@@ -8,8 +8,13 @@ import { UserObject } from "../../object/user.object";
 export const ListUser: Endpoint<ListUserReq, ListUserRes> = {
     method: "GET",
     path: (e) => `/users`,
+    queryParams: ["page", "take"],
 };
-export type ListUserReq = {};
+export type ListUserReqQuery = {
+    page?: number;
+    take?: number;
+};
+export type ListUserReq = ListUserReqQuery
 export type ListUserRes = {
     users: UserObject[];
 };
