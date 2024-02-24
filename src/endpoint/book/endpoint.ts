@@ -9,8 +9,13 @@ import { AdminBookObject } from "../../object/adminBook.object";
 export const ListBook: Endpoint<ListBookReq, ListBookRes> = {
     method: "GET",
     path: (e) => `/books`,
+    queryParams: ["page", "take"],
 };
-export type ListBookReq = {};
+export type ListBookReqQuery = {
+    page?: number;
+    take?: number;
+};
+export type ListBookReq = ListBookReqQuery;
 export type ListBookRes = {
     books: BookObject[];
 };
