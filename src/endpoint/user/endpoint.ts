@@ -17,6 +17,7 @@ export type ListUserReqQuery = {
 export type ListUserReq = ListUserReqQuery
 export type ListUserRes = {
     users: UserObject[];
+    total: number;
 };
 
 /**
