@@ -21,4 +21,5 @@ export type ListUserBookReqQuery = {
 export type ListUserBookReq = ListUserBookReqPath & ListUserBookReqQuery;
 export type ListUserBookRes = {
     books: BookObject[];
+    total: number;
 };

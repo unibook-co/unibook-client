@@ -18,6 +18,7 @@ export type ListBookReqQuery = {
 export type ListBookReq = ListBookReqQuery;
 export type ListBookRes = {
     books: BookObject[];
+    total: number;
 };
 
 /**
