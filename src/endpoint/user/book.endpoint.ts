@@ -9,11 +9,16 @@ export const ListUserBook: Endpoint<ListUserBookReq, ListUserBookRes> = {
     method: "GET",
     path: (e) => `/users/${e.userId}/books`,
     pathParams: ["userId"],
+    queryParams: ["page", "take"],
 };
 export type ListUserBookReqPath = {
     userId: number | string;
 };
-export type ListUserBookReq = ListUserBookReqPath;
+export type ListUserBookReqQuery = {
+    page?: number;
+    take?: number;
+};
+export type ListUserBookReq = ListUserBookReqPath & ListUserBookReqQuery;
 export type ListUserBookRes = {
     books: BookObject[];
 };
