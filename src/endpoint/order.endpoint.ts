@@ -16,6 +16,7 @@ export type ListOrderReq = {
 };
 export type ListOrderRes = {
     orders: OrderObject[];
+    total: number;
 };
 
 /**
