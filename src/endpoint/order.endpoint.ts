@@ -8,8 +8,12 @@ import { OrderObject } from "../object";
 export const ListOrder: Endpoint<ListOrderReq, ListOrderRes> = {
     method: "GET",
     path: (e) => `/orders`,
+    queryParams: ["page", "take"],
 };
-export type ListOrderReq = {};
+export type ListOrderReq = {
+    page?: number;
+    take?: number;
+};
 export type ListOrderRes = {
     orders: OrderObject[];
 };
