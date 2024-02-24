@@ -3,6 +3,7 @@ import {
     ApproveUserOrder,
     AuthOAuthGoogle,
     CancelUserOrder,
+    CreateAndApproveCashUserOrder,
     CreateBlockComment,
     CreateBlockCommentReaction,
     CreateBook,
@@ -50,6 +51,7 @@ export class ProjectBookClient extends EndpointClient {
     readonly ApproveUserOrder = this.endpointBuilder(ApproveUserOrder);
     readonly CancelUserOrder = this.endpointBuilder(CancelUserOrder);
     readonly ListUserOrder = this.endpointBuilder(ListUserOrder);
+    readonly CreateAndApproveCashUserOrder = this.endpointBuilder(CreateAndApproveCashUserOrder)
 
     readonly ListUserBook = this.endpointBuilder(ListUserBook);
 

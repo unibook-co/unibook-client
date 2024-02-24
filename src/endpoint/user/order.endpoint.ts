@@ -23,6 +23,29 @@ export type CreateUserOrderRes = {
 };
 
 /**
+ * POST /users/:userId/orders/cash
+ * 현금 주문을 생성합니다.
+ */
+export const CreateAndApproveCashUserOrder: Endpoint<
+    CreateAndApproveCashUserOrderReq,
+    CreateAndApproveCashUserOrderRes
+    > = {
+        method: "POST",
+        path: (e) => `/users/${e.userId}/orders/cash`,
+        pathParams: ["userId"],
+        bodyParams: ["bookId"],
+};
+export type CreateAndApproveCashUserOrderReqPath = {
+    userId: number | string;
+};
+export type CreateAndApproveCashUserOrderReq = CreateAndApproveCashUserOrderReqPath & {
+    bookId: number | string;
+};
+export type CreateAndApproveCashUserOrderRes = {
+    order: OrderObject;
+};
+
+/**
  * POST /users/:userId/orders/:orderId/approve
  * 주문을 승인합니다.
  */
