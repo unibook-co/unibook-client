@@ -36,6 +36,7 @@ import {
     UpdateBook,
     UpdateSection,
     UpdateUser,
+    UpdateUserProfileImage,
 } from "./endpoint";
 
 export class ProjectBookClient extends EndpointClient {
@@ -43,6 +44,7 @@ export class ProjectBookClient extends EndpointClient {
     readonly GetUser = this.endpointBuilder(GetUser);
     readonly SearchUser = this.endpointBuilder(SearchUser);
     readonly UpdateUser = this.endpointBuilder(UpdateUser);
+    readonly UpdateUserProfileImage = this.endpointBuilder(UpdateUserProfileImage);
 
     readonly CreateUserOrder = this.endpointBuilder(CreateUserOrder);
     readonly ApproveUserOrder = this.endpointBuilder(ApproveUserOrder);

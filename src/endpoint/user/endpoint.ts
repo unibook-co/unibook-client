@@ -70,6 +70,32 @@ export type UpdateUserRes = {
 };
 
 /**
+ * PATCH /users/:userId/profile-image
+ * 유저 프로필 이미지를 수정합니다.
+ */
+export const UpdateUserProfileImage: Endpoint<
+    UpdateUserProfileImageReq,
+    UpdateUserProfileImageRes
+    > = {
+    method: "PATCH",
+    path: (e) => `/users/${e.userId}/profile-image`,
+    pathParams: ["userId"],
+    bodyParams: ["file"],
+    headers: {
+        "Content-Type": "multipart/form-data",
+    }
+};
+export type UpdateUserProfileImageReqPath = {
+    userId: number | string;
+};
+export type UpdateUserProfileImageReq = UpdateUserProfileImageReqPath & {
+    file: any;
+};
+export type UpdateUserProfileImageRes = {
+    user: UserObject;
+};
+
+/**
  * DELETE /users/:userId
  * 유저를 삭제합니다.
  */
