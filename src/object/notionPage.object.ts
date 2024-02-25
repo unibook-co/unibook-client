@@ -3,7 +3,7 @@ export class NotionPageObject {
   path?: string;
   title: string;
   notionPageId: string;
-  recordMap?: string;
+  recordMap?: any;
   cachedAt: string;
 
   constructor(data: any) {
