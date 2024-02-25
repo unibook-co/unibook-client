@@ -13,6 +13,7 @@ import {
   DeleteBlockCommentReaction,
   DeleteBook,
   DeleteBookmark,
+  DeleteNotionPage,
   DeleteSection,
   DeleteUserDevice,
   EditBlockComment,
@@ -20,6 +21,7 @@ import {
   GetAdminBook,
   GetBook,
   GetIntroductionSection,
+  GetNotionPage,
   GetOrder,
   GetSection,
   GetUser,
@@ -27,13 +29,16 @@ import {
   ListBlockCommentReaction,
   ListBook,
   ListBookmark,
+  ListNotionPage,
   ListOrder,
   ListSection,
   ListUser,
   ListUserBook,
   ListUserDevice,
   ListUserOrder,
+  LoadNotionPage,
   LoadSection,
+  ReloadNotionPage,
   SearchBook,
   SearchUser,
   UpdateBook,
@@ -43,6 +48,12 @@ import {
 } from "./endpoint";
 
 export class ProjectBookClient extends EndpointClient {
+  readonly LoadNotionPage = this.endpointBuilder(LoadNotionPage);
+  readonly ReloadNotionPage = this.endpointBuilder(ReloadNotionPage);
+  readonly DeleteNotionPage = this.endpointBuilder(DeleteNotionPage);
+  readonly ListNotionPage = this.endpointBuilder(ListNotionPage);
+  readonly GetNotionPage = this.endpointBuilder(GetNotionPage);
+
   readonly ListUser = this.endpointBuilder(ListUser);
   readonly GetUser = this.endpointBuilder(GetUser);
   readonly SearchUser = this.endpointBuilder(SearchUser);
