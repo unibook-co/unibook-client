@@ -25,6 +25,7 @@ import {
   GetOrder,
   GetSection,
   GetUser,
+  ListAdminBook,
   ListBlockComment,
   ListBlockCommentReaction,
   ListBook,
@@ -78,6 +79,7 @@ export class ProjectBookClient extends EndpointClient {
   readonly AuthOAuthGoogle = this.endpointBuilder(AuthOAuthGoogle);
 
   readonly ListBook = this.endpointBuilder(ListBook);
+  readonly ListAdminBook = this.endpointBuilder(ListAdminBook);
   readonly GetBook = this.endpointBuilder(GetBook);
   readonly GetAdminBook = this.endpointBuilder(GetAdminBook);
   readonly SearchBook = this.endpointBuilder(SearchBook);

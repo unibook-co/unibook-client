@@ -7,18 +7,37 @@ import { AdminBookObject } from "../../object/adminBook.object";
  * 책 목록을 조회합니다.
  */
 export const ListBook: Endpoint<ListBookReq, ListBookRes> = {
-    method: "GET",
-    path: (e) => `/books`,
-    queryParams: ["page", "take"],
+  method: "GET",
+  path: (e) => `/books`,
+  queryParams: ["page", "take"],
 };
 export type ListBookReqQuery = {
-    page?: number;
-    take?: number;
+  page?: number;
+  take?: number;
 };
 export type ListBookReq = ListBookReqQuery;
 export type ListBookRes = {
-    books: BookObject[];
-    total: number;
+  books: BookObject[];
+  total: number;
+};
+
+/**
+ * GET /books/admin
+ * 책 목록을 조회합니다.
+ */
+export const ListAdminBook: Endpoint<ListAdminBookReq, ListAdminBookRes> = {
+  method: "GET",
+  path: (e) => `/books/admin`,
+  queryParams: ["page", "take"],
+};
+export type ListAdminBookReqQuery = {
+  page?: number;
+  take?: number;
+};
+export type ListAdminBookReq = ListAdminBookReqQuery;
+export type ListAdminBookRes = {
+  books: AdminBookObject[];
+  total: number;
 };
 
 /**
@@ -26,16 +45,16 @@ export type ListBookRes = {
  * 책을 조회합니다.
  */
 export const GetBook: Endpoint<GetBookReq, GetBookRes> = {
-    method: "GET",
-    path: (e) => `/books/${e.bookId}`,
-    pathParams: ["bookId"],
+  method: "GET",
+  path: (e) => `/books/${e.bookId}`,
+  pathParams: ["bookId"],
 };
 export type GetBookReqPath = {
-    bookId: number | string;
+  bookId: number | string;
 };
 export type GetBookReq = GetBookReqPath;
 export type GetBookRes = {
-    book: BookObject;
+  book: BookObject;
 };
 
 /**
@@ -43,16 +62,16 @@ export type GetBookRes = {
  * 책을 조회합니다.
  */
 export const GetAdminBook: Endpoint<GetAdminBookReq, GetAdminBookRes> = {
-    method: "GET",
-    path: (e) => `/books/${e.bookId}/admin`,
-    pathParams: ["bookId"],
+  method: "GET",
+  path: (e) => `/books/${e.bookId}/admin`,
+  pathParams: ["bookId"],
 };
 export type GetAdminBookReqPath = {
-    bookId: number | string;
+  bookId: number | string;
 };
 export type GetAdminBookReq = GetAdminBookReqPath;
 export type GetAdminBookRes = {
-    book: AdminBookObject;
+  book: AdminBookObject;
 };
 
 /**
@@ -60,16 +79,16 @@ export type GetAdminBookRes = {
  * 책을 검색합니다.
  */
 export const SearchBook: Endpoint<SearchBookReq, SearchBookRes> = {
-    method: "GET",
-    path: (e) => `/books/search`,
-    queryParams: ["query"],
+  method: "GET",
+  path: (e) => `/books/search`,
+  queryParams: ["query"],
 };
 export type SearchBookReqQuery = {
-    query: string;
+  query: string;
 };
 export type SearchBookReq = SearchBookReqQuery;
 export type SearchBookRes = {
-    books: BookObject[];
+  books: BookObject[];
 };
 
 /**
@@ -77,28 +96,28 @@ export type SearchBookRes = {
  * 책을 생성합니다.
  */
 export const CreateBook: Endpoint<CreateBookReq, CreateBookRes> = {
-    method: "POST",
-    path: (e) => `/books`,
-    bodyParams: [
-        "title",
-        "author",
-        "description",
-        "price",
-        "coverImage",
-        "notionDatabaseId",
-    ],
+  method: "POST",
+  path: (e) => `/books`,
+  bodyParams: [
+    "title",
+    "author",
+    "description",
+    "price",
+    "coverImage",
+    "notionDatabaseId",
+  ],
 };
 export type CreateBookReqBody = {
-    title: string;
-    author: string;
-    description: string;
-    price: number;
-    coverImage: string;
-    notionDatabaseId: string;
+  title: string;
+  author: string;
+  description: string;
+  price: number;
+  coverImage: string;
+  notionDatabaseId: string;
 };
 export type CreateBookReq = CreateBookReqBody;
 export type CreateBookRes = {
-    book: AdminBookObject;
+  book: AdminBookObject;
 };
 
 /**
@@ -106,34 +125,34 @@ export type CreateBookRes = {
  * 책을 수정합니다.
  */
 export const UpdateBook: Endpoint<UpdateBookReq, UpdateBookRes> = {
-    method: "PUT",
-    path: (e) => `/books/${e.bookId}`,
-    pathParams: ["bookId"],
-    bodyParams: [
-        "title",
-        "author",
-        "description",
-        "price",
-        "coverImage",
-        "notionDatabaseId",
-        "status",
-    ],
+  method: "PUT",
+  path: (e) => `/books/${e.bookId}`,
+  pathParams: ["bookId"],
+  bodyParams: [
+    "title",
+    "author",
+    "description",
+    "price",
+    "coverImage",
+    "notionDatabaseId",
+    "status",
+  ],
 };
 export type UpdateBookReqPath = {
-    bookId: number | string;
+  bookId: number | string;
 };
 export type UpdateBookReqBody = {
-    title?: string;
-    author?: string;
-    description?: string;
-    price?: number;
-    coverImage?: string;
-    notionDatabaseId?: string;
-    status?: "draft" | "pending" | "published" | "deleted";
+  title?: string;
+  author?: string;
+  description?: string;
+  price?: number;
+  coverImage?: string;
+  notionDatabaseId?: string;
+  status?: "draft" | "pending" | "published" | "deleted";
 };
 export type UpdateBookReq = UpdateBookReqPath & UpdateBookReqBody;
 export type UpdateBookRes = {
-    book: AdminBookObject;
+  book: AdminBookObject;
 };
 
 /**
@@ -141,12 +160,12 @@ export type UpdateBookRes = {
  * 책을 삭제합니다.
  */
 export const DeleteBook: Endpoint<DeleteBookReq, DeleteBookRes> = {
-    method: "DELETE",
-    path: (e) => `/books/${e.bookId}`,
-    pathParams: ["bookId"],
+  method: "DELETE",
+  path: (e) => `/books/${e.bookId}`,
+  pathParams: ["bookId"],
 };
 export type DeleteBookReqPath = {
-    bookId: number | string;
+  bookId: number | string;
 };
 export type DeleteBookReq = DeleteBookReqPath;
 export type DeleteBookRes = {};
