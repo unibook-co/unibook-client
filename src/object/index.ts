@@ -11,3 +11,6 @@ export * from "./blockCommentReaction.object";
 export * from "./childBlockComment.object";
 export * from "./parentBlockComment.object";
 export * from "./notionPage.object";
+export * from "./blockMemo.object";
+export * from "./childBlockMemo.object";
+export * from "./parentBlockMemo.object";
