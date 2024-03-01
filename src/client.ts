@@ -6,11 +6,13 @@ import {
   CreateAndApproveCashUserOrder,
   CreateBlockComment,
   CreateBlockCommentReaction,
+  CreateBlockMemo,
   CreateBook,
   CreateBookmark,
   CreateUserOrder,
   DeleteBlockComment,
   DeleteBlockCommentReaction,
+  DeleteBlockMemo,
   DeleteBook,
   DeleteBookmark,
   DeleteNotionPage,
@@ -28,6 +30,7 @@ import {
   ListAdminBook,
   ListBlockComment,
   ListBlockCommentReaction,
+  ListBlockMemo,
   ListBook,
   ListBookmark,
   ListNotionPage,
@@ -42,6 +45,7 @@ import {
   ReloadNotionPage,
   SearchBook,
   SearchUser,
+  UpdateBlockMemo,
   UpdateBook,
   UpdateSection,
   UpdateUser,
@@ -111,6 +115,11 @@ export class ProjectBookClient extends EndpointClient {
   readonly DeleteBlockCommentReaction = this.endpointBuilder(
     DeleteBlockCommentReaction
   );
+
+  readonly ListBlockMemo = this.endpointBuilder(ListBlockMemo);
+  readonly CreateBlockMemo = this.endpointBuilder(CreateBlockMemo);
+  readonly UpdateBlockMemo = this.endpointBuilder(UpdateBlockMemo);
+  readonly DeleteBlockMemo = this.endpointBuilder(DeleteBlockMemo);
 
   readonly ListBookmark = this.endpointBuilder(ListBookmark);
   readonly CreateBookmark = this.endpointBuilder(CreateBookmark);
