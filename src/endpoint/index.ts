@@ -4,3 +4,4 @@ export * from "./order.endpoint";
 export * from "./book";
 export * from "./user";
 export * from "./notion-pages";
+export * from "./s3";

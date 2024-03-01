@@ -50,6 +50,7 @@ import {
   UpdateSection,
   UpdateUser,
   UpdateUserProfileImage,
+  UploadFile,
 } from "./endpoint";
 
 export class ProjectBookClient extends EndpointClient {
@@ -127,4 +128,6 @@ export class ProjectBookClient extends EndpointClient {
 
   readonly GetOrder = this.endpointBuilder(GetOrder);
   readonly ListOrder = this.endpointBuilder(ListOrder);
+
+  readonly UploadFile = this.endpointBuilder(UploadFile);
 }
