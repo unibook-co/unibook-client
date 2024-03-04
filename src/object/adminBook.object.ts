@@ -14,7 +14,7 @@ export class AdminBookObject {
     role: string;
     user: UserObject;
   }[];
-  isPDFEnabled: boolean;
+  isPDFExportEnabled: boolean;
   createdAt: string;
   updatedAt: string;
 
@@ -27,7 +27,7 @@ export class AdminBookObject {
     coverImage: string;
     notionDatabaseId: string;
     status: "draft" | "pending" | "published" | "deleted";
-    isPDFEnabled: boolean;
+    isPDFExportEnabled: boolean;
     authorUsers: {
       id: number;
       role: string;
@@ -43,7 +43,7 @@ export class AdminBookObject {
     this.price = data.price;
     this.coverImage = data.coverImage;
     this.notionDatabaseId = data.notionDatabaseId;
-    this.isPDFEnabled = data.isPDFEnabled;
+    this.isPDFExportEnabled = data.isPDFExportEnabled;
     this.status = data.status;
     this.authorUsers = data.authorUsers;
     this.createdAt = data.createdAt;
