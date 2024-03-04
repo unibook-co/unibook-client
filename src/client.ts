@@ -21,6 +21,7 @@ import {
   DeleteSection,
   DeleteUserDevice,
   EditBlockComment,
+  ExportSectionPDF,
   FetchSection,
   GetAdminBook,
   GetBook,
@@ -108,6 +109,8 @@ export class ProjectBookClient extends EndpointClient {
   readonly LoadSection = this.endpointBuilder(LoadSection);
   readonly UpdateSection = this.endpointBuilder(UpdateSection);
   readonly DeleteSection = this.endpointBuilder(DeleteSection);
+
+  readonly ExportSectionPDF = this.endpointBuilder(ExportSectionPDF);
 
   readonly ListBlockComment = this.endpointBuilder(ListBlockComment);
   readonly CreateBlockComment = this.endpointBuilder(CreateBlockComment);
