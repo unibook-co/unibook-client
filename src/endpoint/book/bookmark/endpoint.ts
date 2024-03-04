@@ -1,21 +1,21 @@
 import { Endpoint } from "endpoint-client";
-import { SectionObject } from "../../object/section.object";
+import { SectionObject } from "../../../object/section.object";
 
 /**
  * GET /books/:bookId/bookmarks
  * 책의 북마크를 조회합니다.
  */
 export const ListBookmark: Endpoint<ListBookmarkReq, ListBookmarkRes> = {
-    method: "GET",
-    path: (e) => `/books/${e.bookId}/bookmarks`,
-    pathParams: ["bookId"],
+  method: "GET",
+  path: (e) => `/books/${e.bookId}/bookmarks`,
+  pathParams: ["bookId"],
 };
 export type ListBookmarkReqPath = {
-    bookId: number | string;
+  bookId: number | string;
 };
 export type ListBookmarkReq = ListBookmarkReqPath;
 export type ListBookmarkRes = {
-    sections: SectionObject[];
+  sections: SectionObject[];
 };
 
 /**
@@ -23,16 +23,16 @@ export type ListBookmarkRes = {
  * 책에 북마크를 추가합니다.
  */
 export const CreateBookmark: Endpoint<CreateBookmarkReq, CreateBookmarkRes> = {
-    method: "POST",
-    path: (e) => `/books/${e.bookId}/bookmarks`,
-    pathParams: ["bookId"],
-    bodyParams: ["sectionId"],
+  method: "POST",
+  path: (e) => `/books/${e.bookId}/bookmarks`,
+  pathParams: ["bookId"],
+  bodyParams: ["sectionId"],
 };
 export type CreateBookmarkReqPath = {
-    bookId: number | string;
+  bookId: number | string;
 };
 export type CreateBookmarkReq = CreateBookmarkReqPath & {
-    sectionId: number | string;
+  sectionId: number | string;
 };
 export type CreateBookmarkRes = {};
 
@@ -41,13 +41,13 @@ export type CreateBookmarkRes = {};
  * 책의 북마크를 삭제합니다.
  */
 export const DeleteBookmark: Endpoint<DeleteBookmarkReq, DeleteBookmarkRes> = {
-    method: "DELETE",
-    path: (e) => `/books/${e.bookId}/bookmarks/${e.sectionId}`,
-    pathParams: ["bookId", "sectionId"],
+  method: "DELETE",
+  path: (e) => `/books/${e.bookId}/bookmarks/${e.sectionId}`,
+  pathParams: ["bookId", "sectionId"],
 };
 export type DeleteBookmarkReqPath = {
-    bookId: number | string;
-    sectionId: number | string;
+  bookId: number | string;
+  sectionId: number | string;
 };
 export type DeleteBookmarkReq = DeleteBookmarkReqPath;
 export type DeleteBookmarkRes = {};

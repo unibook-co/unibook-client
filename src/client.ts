@@ -1,5 +1,6 @@
 import { EndpointClient } from "endpoint-client";
 import {
+  AddBookAuthor,
   ApproveUserOrder,
   AuthOAuthGoogle,
   CancelUserOrder,
@@ -14,6 +15,7 @@ import {
   DeleteBlockCommentReaction,
   DeleteBlockMemo,
   DeleteBook,
+  DeleteBookAuthor,
   DeleteBookmark,
   DeleteNotionPage,
   DeleteSection,
@@ -47,6 +49,7 @@ import {
   SearchUser,
   UpdateBlockMemo,
   UpdateBook,
+  UpdateBookAuthor,
   UpdateSection,
   UpdateUser,
   UpdateUserProfileImage,
@@ -91,6 +94,10 @@ export class ProjectBookClient extends EndpointClient {
   readonly CreateBook = this.endpointBuilder(CreateBook);
   readonly UpdateBook = this.endpointBuilder(UpdateBook);
   readonly DeleteBook = this.endpointBuilder(DeleteBook);
+
+  readonly AddBookAuthor = this.endpointBuilder(AddBookAuthor);
+  readonly UpdateBookAuthor = this.endpointBuilder(UpdateBookAuthor);
+  readonly DeleteBookAuthor = this.endpointBuilder(DeleteBookAuthor);
 
   readonly ListSection = this.endpointBuilder(ListSection);
   readonly GetSection = this.endpointBuilder(GetSection);
