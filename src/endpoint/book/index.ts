@@ -1,3 +1,3 @@
-export * from "./section/endpoint";
-export * from "./bookmark.endpoint";
+export * from "./bookmark";
 export * from "./section";
+export * from "./author";
