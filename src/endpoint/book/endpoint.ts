@@ -121,11 +121,11 @@ export type CreateBookRes = {
 };
 
 /**
- * PUT /books/:bookId
+ * PATCH /books/:bookId
  * 책을 수정합니다.
  */
 export const UpdateBook: Endpoint<UpdateBookReq, UpdateBookRes> = {
-  method: "PUT",
+  method: "PATCH",
   path: (e) => `/books/${e.bookId}`,
   pathParams: ["bookId"],
   bodyParams: [
