@@ -1,3 +1,5 @@
+import { UserObject } from "./user.object";
+
 export class AdminBookObject {
   id: number;
   title: string;
@@ -10,6 +12,7 @@ export class AdminBookObject {
   authorUsers: {
     id: number;
     role: string;
+    user: UserObject;
   }[];
   createdAt: string;
   updatedAt: string;
@@ -26,6 +29,7 @@ export class AdminBookObject {
     authorUsers: {
       id: number;
       role: string;
+      user: UserObject;
     }[];
     createdAt: string;
     updatedAt: string;
