@@ -1,3 +1,5 @@
+import { UserObject } from "./user.object";
+
 export class BookObject {
   id: number;
   title: string;
@@ -9,6 +11,7 @@ export class BookObject {
   authorUsers: {
     id: number;
     role: string;
+    user: UserObject;
   }[];
 
   constructor(data: {
@@ -22,6 +25,7 @@ export class BookObject {
     authorUsers: {
       id: number;
       role: string;
+      user: UserObject;
     }[];
   }) {
     this.id = data.id;
