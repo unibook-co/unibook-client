@@ -136,7 +136,7 @@ export const UpdateBook: Endpoint<UpdateBookReq, UpdateBookRes> = {
     "coverImage",
     "notionDatabaseId",
     "status",
-    "isPDFEnabled",
+    "isExportPDFEnabled",
   ],
 };
 export type UpdateBookReqPath = {
@@ -150,7 +150,7 @@ export type UpdateBookReqBody = {
   coverImage?: string;
   notionDatabaseId?: string;
   status?: "draft" | "pending" | "published" | "deleted";
-  isPDFEnabled?: boolean;
+  isExportPDFEnabled?: boolean;
 };
 export type UpdateBookReq = UpdateBookReqPath & UpdateBookReqBody;
 export type UpdateBookRes = {
