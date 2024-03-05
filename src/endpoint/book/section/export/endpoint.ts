@@ -9,7 +9,7 @@ export const ExportSectionPDF: Endpoint<
   ExportSectionPDFRes
 > = {
   method: "POST",
-  path: (e) => `/books/${e.bookId}/sections/${e.sectionId}/pdf`,
+  path: (e) => `/books/${e.bookId}/sections/${e.sectionId}/export/pdf`,
   pathParams: ["bookId", "sectionId"],
 };
 export type ExportSectionPDFReqPath = {
