@@ -13,6 +13,7 @@ export class BookObject {
     role: string;
     user: UserObject;
   }[];
+  isExportPDFEnabled: boolean;
 
   constructor(data: {
     id: number;
@@ -27,6 +28,7 @@ export class BookObject {
       role: string;
       user: UserObject;
     }[];
+    isExportPDFEnabled: boolean;
   }) {
     this.id = data.id;
     this.title = data.title;
@@ -36,5 +38,6 @@ export class BookObject {
     this.coverImage = data.coverImage;
     this.status = data.status;
     this.authorUsers = data.authorUsers;
+    this.isExportPDFEnabled = data.isExportPDFEnabled;
   }
 }
