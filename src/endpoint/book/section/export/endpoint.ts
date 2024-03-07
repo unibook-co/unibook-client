@@ -11,12 +11,17 @@ export const ExportSectionPDF: Endpoint<
   method: "POST",
   path: (e) => `/books/${e.bookId}/sections/${e.sectionId}/export/pdf`,
   pathParams: ["bookId", "sectionId"],
+  queryParams: ["withChildren"],
 };
 export type ExportSectionPDFReqPath = {
   bookId: number | string;
   sectionId: number | string;
 };
-export type ExportSectionPDFReq = ExportSectionPDFReqPath;
+export type ExportSectionPDFReqQuery = {
+  withChildren?: "true" | "false";
+};
+export type ExportSectionPDFReq = ExportSectionPDFReqPath &
+  ExportSectionPDFReqQuery;
 export type ExportSectionPDFRes = {
   url: string;
 };
