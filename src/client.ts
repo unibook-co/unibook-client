@@ -57,6 +57,7 @@ import {
   UpdateUser,
   UpdateUserProfileImage,
   UploadFile,
+  DeleteUser,
 } from "./endpoint";
 
 export class ProjectBookClient extends EndpointClient {
@@ -74,6 +75,7 @@ export class ProjectBookClient extends EndpointClient {
   readonly UpdateUserProfileImage = this.endpointBuilder(
     UpdateUserProfileImage
   );
+  readonly DeleteUser = this.endpointBuilder(DeleteUser);
 
   readonly ListUserDevice = this.endpointBuilder(ListUserDevice);
   readonly DeleteUserDevice = this.endpointBuilder(DeleteUserDevice);
