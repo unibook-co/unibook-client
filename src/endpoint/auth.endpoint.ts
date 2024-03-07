@@ -28,7 +28,7 @@ export const IssueToken: Endpoint<IssueTokenReq, IssueTokenRes> = {
   bodyParams: ["userId"],
 };
 export type IssueTokenReq = {
-  userId: string;
+  userId: number;
 };
 export type IssueTokenRes = {
   token: string;
