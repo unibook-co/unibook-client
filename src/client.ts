@@ -2,6 +2,7 @@ import { EndpointClient } from "endpoint-client";
 import {
   AddBookAuthor,
   ApproveUserOrder,
+  IssueToken,
   AuthOAuthGoogle,
   CancelUserOrder,
   CreateAndApproveCashUserOrder,
@@ -10,6 +11,7 @@ import {
   CreateBlockMemo,
   CreateBook,
   CreateBookmark,
+  CreateUser,
   CreateUserOrder,
   DeleteBlockComment,
   DeleteBlockCommentReaction,
@@ -66,6 +68,7 @@ export class ProjectBookClient extends EndpointClient {
 
   readonly ListUser = this.endpointBuilder(ListUser);
   readonly GetUser = this.endpointBuilder(GetUser);
+  readonly CreateUser = this.endpointBuilder(CreateUser);
   readonly SearchUser = this.endpointBuilder(SearchUser);
   readonly UpdateUser = this.endpointBuilder(UpdateUser);
   readonly UpdateUserProfileImage = this.endpointBuilder(
@@ -86,6 +89,8 @@ export class ProjectBookClient extends EndpointClient {
   readonly ListUserBook = this.endpointBuilder(ListUserBook);
 
   readonly AuthOAuthGoogle = this.endpointBuilder(AuthOAuthGoogle);
+
+  readonly IssueToken = this.endpointBuilder(IssueToken);
 
   readonly ListBook = this.endpointBuilder(ListBook);
   readonly ListAdminBook = this.endpointBuilder(ListAdminBook);
