@@ -64,6 +64,8 @@ import {
   SetBlockCommentNotificationOff,
   ListUserNotification,
   DeleteUserNotification,
+  GetUserSetting,
+  UpdateUserSetting,
 } from "./endpoint";
 
 export class ProjectBookClient extends EndpointClient {
@@ -82,6 +84,9 @@ export class ProjectBookClient extends EndpointClient {
     UpdateUserProfileImage
   );
   readonly DeleteUser = this.endpointBuilder(DeleteUser);
+
+  readonly GetUserSetting = this.endpointBuilder(GetUserSetting);
+  readonly UpdateUserSetting = this.endpointBuilder(UpdateUserSetting);
 
   readonly ListUserDevice = this.endpointBuilder(ListUserDevice);
   readonly DeleteUserDevice = this.endpointBuilder(DeleteUserDevice);
