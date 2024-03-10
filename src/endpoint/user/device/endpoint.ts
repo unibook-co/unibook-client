@@ -1,5 +1,5 @@
 import { Endpoint } from "endpoint-client";
-import { DeviceObject } from "../../object/device.object";
+import { DeviceObject } from "../../../object/device.object";
 
 /**
  * GET /users/:userId/devices
