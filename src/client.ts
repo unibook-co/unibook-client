@@ -58,6 +58,12 @@ import {
   UpdateUserProfileImage,
   UploadFile,
   DeleteUser,
+  RegisterUserNotificationDevice,
+  GetIsBlockCommentNotificationOn,
+  SetBlockCommentNotificationOn,
+  SetBlockCommentNotificationOff,
+  ListUserNotification,
+  DeleteUserNotification,
 } from "./endpoint";
 
 export class ProjectBookClient extends EndpointClient {
@@ -79,6 +85,15 @@ export class ProjectBookClient extends EndpointClient {
 
   readonly ListUserDevice = this.endpointBuilder(ListUserDevice);
   readonly DeleteUserDevice = this.endpointBuilder(DeleteUserDevice);
+
+  readonly ListUserNotification = this.endpointBuilder(ListUserNotification);
+  readonly DeleteUserNotification = this.endpointBuilder(
+    DeleteUserNotification
+  );
+
+  readonly RegisterUserNotificationDevice = this.endpointBuilder(
+    RegisterUserNotificationDevice
+  );
 
   readonly CreateUserOrder = this.endpointBuilder(CreateUserOrder);
   readonly ApproveUserOrder = this.endpointBuilder(ApproveUserOrder);
@@ -132,6 +147,16 @@ export class ProjectBookClient extends EndpointClient {
   );
   readonly DeleteBlockCommentReaction = this.endpointBuilder(
     DeleteBlockCommentReaction
+  );
+
+  readonly GetIsBlockCommentNotificationOn = this.endpointBuilder(
+    GetIsBlockCommentNotificationOn
+  );
+  readonly SetBlockCommentNotificationOn = this.endpointBuilder(
+    SetBlockCommentNotificationOn
+  );
+  readonly SetBlockCommentNotificationOff = this.endpointBuilder(
+    SetBlockCommentNotificationOff
   );
 
   readonly ListBlockMemo = this.endpointBuilder(ListBlockMemo);
