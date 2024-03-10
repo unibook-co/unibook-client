@@ -14,3 +14,4 @@ export * from "./notionPage.object";
 export * from "./blockMemo.object";
 export * from "./childBlockMemo.object";
 export * from "./parentBlockMemo.object";
+export * from "./userSetting.object";
