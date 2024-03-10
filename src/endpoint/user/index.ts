@@ -1,4 +1,4 @@
-export * from "./order.endpoint";
-export * from "./book.endpoint";
 export * from "./endpoint";
-export * from "./device.endpoint";
+export * from "./order";
+export * from "./book";
+export * from "./device";
