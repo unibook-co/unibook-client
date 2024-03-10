@@ -1,7 +1,7 @@
 import { Endpoint } from "endpoint-client";
 
 /**
- * GET /books/:bookId/sections/:sectionId/block-comments/:blockCommentId/notification
+ * GET /books/:bookId/sections/:sectionId/block-comments/:blockCommentId/notifications
  * 블록 댓글 알림을 활성화했는지 조회합니다.
  */
 export const GetIsBlockCommentNotificationOn: Endpoint<
@@ -10,7 +10,7 @@ export const GetIsBlockCommentNotificationOn: Endpoint<
 > = {
   method: "GET",
   path: (e) =>
-    `/books/${e.bookId}/sections/${e.sectionId}/block-comments/${e.blockCommentId}/notification`,
+    `/books/${e.bookId}/sections/${e.sectionId}/block-comments/${e.blockCommentId}/notifications`,
   pathParams: ["bookId", "sectionId", "blockCommentId"],
 };
 export type GetBlockCommentNotificationReqPath = {
@@ -24,7 +24,7 @@ export type GetBlockCommentNotificationRes = {
 };
 
 /**
- * POST /books/:bookId/sections/:sectionId/block-comments/:blockCommentId/notification
+ * POST /books/:bookId/sections/:sectionId/block-comments/:blockCommentId/notifications
  * 블록 댓글 알림을 활성화합니다.
  */
 export const SetBlockCommentNotificationOn: Endpoint<
@@ -33,7 +33,7 @@ export const SetBlockCommentNotificationOn: Endpoint<
 > = {
   method: "POST",
   path: (e) =>
-    `/books/${e.bookId}/sections/${e.sectionId}/block-comments/${e.blockCommentId}/notification`,
+    `/books/${e.bookId}/sections/${e.sectionId}/block-comments/${e.blockCommentId}/notifications`,
   pathParams: ["bookId", "sectionId", "blockCommentId"],
 };
 export type SetBlockCommentNotificationOnReqPath = {
@@ -46,7 +46,7 @@ export type SetBlockCommentNotificationOnReq =
 export type SetBlockCommentNotificationOnRes = {};
 
 /**
- * DELETE /books/:bookId/sections/:sectionId/block-comments/:blockCommentId/notification
+ * DELETE /books/:bookId/sections/:sectionId/block-comments/:blockCommentId/notifications
  * 블록 댓글 알림을 비활성화합니다.
  */
 export const SetBlockCommentNotificationOff: Endpoint<
@@ -55,7 +55,7 @@ export const SetBlockCommentNotificationOff: Endpoint<
 > = {
   method: "DELETE",
   path: (e) =>
-    `/books/${e.bookId}/sections/${e.sectionId}/block-comments/${e.blockCommentId}/notification`,
+    `/books/${e.bookId}/sections/${e.sectionId}/block-comments/${e.blockCommentId}/notifications`,
   pathParams: ["bookId", "sectionId", "blockCommentId"],
 };
 export type SetBlockCommentNotificationOffReqPath = {
