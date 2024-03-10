@@ -34,7 +34,9 @@ export const UpdateUserSetting: Endpoint<
 export type UpdateUserSettingReqPath = {
   userId: number | string;
 };
-export type UpdateUserSettingReq = UpdateUserSettingReqPath & {
-  userSetting: UserSettingObject;
+export type UpdateUserSettingBody = {
+  userSetting: Partial<UserSettingObject>;
 };
+export type UpdateUserSettingReq = UpdateUserSettingReqPath &
+  UpdateUserSettingBody;
 export type UpdateUserSettingRes = {};
