@@ -68,7 +68,7 @@ import {
   UpdateUserSetting,
 } from "./endpoint";
 
-export class ProjectBookClient extends EndpointClient {
+export class UniBookClient extends EndpointClient {
   readonly LoadNotionPage = this.endpointBuilder(LoadNotionPage);
   readonly ReloadNotionPage = this.endpointBuilder(ReloadNotionPage);
   readonly DeleteNotionPage = this.endpointBuilder(DeleteNotionPage);
