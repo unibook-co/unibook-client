@@ -18,3 +18,5 @@ export * from "./userSetting.object";
 export * from "./coupon.object";
 export * from "./couponLog.object";
 export * from "./couponUseLog.object";
+export * from "./device.object";
+export * from "./notification.object";
