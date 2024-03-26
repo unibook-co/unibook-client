@@ -8,7 +8,7 @@ export type CouponTarget = CouponBookTarget;
 export type CouponDiscountType = "price" | "rate";
 export type CouponPriceDiscount = {
   type: "price";
-  price: number | "free";
+  price: number;
 };
 export type CouponRateDiscount = {
   type: "rate";

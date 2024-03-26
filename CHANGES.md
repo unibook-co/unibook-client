@@ -10,6 +10,32 @@
 
 # 변경사항
 
+## `v1.0.35`
+
+> 이전 버전 수정 포함
+
+### Object
+
+* `CouponPriceDiscount` 타입 변경 ⚠️
+
+  * before
+
+    ```typescript
+    type CouponPriceDiscount = {
+        type: "price";
+        price: number | 'free';
+    };
+    ```
+
+  * after
+
+    ```typescript
+    type CouponPriceDiscount = {
+        type: "price";
+        price: number;
+    };
+    ```
+
 ## `v1.0.34`
 
 > 이전 버전 수정 포함
