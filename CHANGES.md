@@ -10,6 +10,30 @@
 
 # 변경사항
 
+## `v1.0.38`
+
+* `UpdateBookReqBody` 타입 변경 ⚠️
+
+  * before
+
+    ```typescript
+    type UpdateBookReqBody = {
+        regularPrice: number;
+        publisher: string;
+        publishedAt: string;
+    };
+    ```
+
+  * after
+
+    ```typescript
+    type UpdateBookReqBody = {
+        regularPrice?: number;
+        publisher?: string;
+        publishedAt?: string;
+    };
+    ```
+
 ## `v1.0.37`
 
 * 누락된 `DeviceObject` 포함

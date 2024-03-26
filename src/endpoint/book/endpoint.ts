@@ -162,9 +162,9 @@ export type UpdateBookReqBody = {
   notionDatabaseId?: string;
   status?: "draft" | "pending" | "published" | "deleted";
   isExportPDFEnabled?: boolean;
-  regularPrice: number;
-  publisher: string;
-  publishedAt: string;
+  regularPrice?: number;
+  publisher?: string;
+  publishedAt?: string;
   ISBN?: string;
 };
 export type UpdateBookReq = UpdateBookReqPath & UpdateBookReqBody;
