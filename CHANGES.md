@@ -10,6 +10,46 @@
 
 # 변경사항
 
+## `v1.0.34`
+
+> 이전 버전 수정 포함
+
+### Object
+
+* `CouponObject` 항목 변경 ⚠️
+
+  * before
+
+    ```typescript
+    target: CouponTarget;
+    ```
+
+  * after
+
+    ```typescript
+    targets: CouponTarget[];
+    ```
+
+* `CouponBookTarget` 타입 변경 ⚠️
+
+  * before
+
+    ```typescript
+    type CouponBookTarget = {
+        type: "book";
+        bookIds: number[];
+    };
+    ```
+
+  * after
+
+    ```typescript
+    type CouponBookTarget = {
+        type: "book";
+        bookId: number;
+    };
+    ```
+
 ## `v1.0.33`
 
 ### Object

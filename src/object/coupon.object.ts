@@ -1,7 +1,7 @@
 export type CouponTargetType = "book";
 export type CouponBookTarget = {
   type: "book";
-  bookIds: number[];
+  bookId: number;
 };
 export type CouponTarget = CouponBookTarget;
 
