@@ -66,6 +66,14 @@ import {
   DeleteUserNotification,
   GetUserSetting,
   UpdateUserSetting,
+  ListCoupon,
+  GetCoupon,
+  CreateCoupon,
+  UpdateCoupon,
+  DeleteCoupon,
+  GetCouponByCode,
+  ListCouponLog,
+  ListCouponUseLog,
 } from "./endpoint";
 
 export class UniBookClient extends EndpointClient {
@@ -210,4 +218,17 @@ export class UniBookClient extends EndpointClient {
    * File
    */
   readonly UploadFile = this.endpointBuilder(UploadFile);
+
+  /**
+   * Coupon
+   */
+  readonly ListCoupon = this.endpointBuilder(ListCoupon);
+  readonly GetCoupon = this.endpointBuilder(GetCoupon);
+  readonly GetCouponByCode = this.endpointBuilder(GetCouponByCode);
+  readonly CreateCoupon = this.endpointBuilder(CreateCoupon);
+  readonly UpdateCoupon = this.endpointBuilder(UpdateCoupon);
+  readonly DeleteCoupon = this.endpointBuilder(DeleteCoupon);
+
+  readonly ListCouponLog = this.endpointBuilder(ListCouponLog);
+  readonly ListCouponUseLog = this.endpointBuilder(ListCouponUseLog);
 }

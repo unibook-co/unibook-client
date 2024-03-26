@@ -1,5 +1,5 @@
 import { Endpoint } from "endpoint-client";
-import { BookObject } from "../../object";
+import { BookObject, SectionPreviewObject } from "../../object";
 import { AdminBookObject } from "../../object/adminBook.object";
 
 /**
@@ -105,6 +105,9 @@ export const CreateBook: Endpoint<CreateBookReq, CreateBookRes> = {
     "price",
     "coverImage",
     "notionDatabaseId",
+    "regularPrice",
+    "publisher",
+    "publishedAt",
   ],
 };
 export type CreateBookReqBody = {
@@ -114,6 +117,10 @@ export type CreateBookReqBody = {
   price: number;
   coverImage: string;
   notionDatabaseId: string;
+  regularPrice: number;
+  publisher: string;
+  publishedAt: string;
+  ISBN?: string;
 };
 export type CreateBookReq = CreateBookReqBody;
 export type CreateBookRes = {
@@ -137,6 +144,10 @@ export const UpdateBook: Endpoint<UpdateBookReq, UpdateBookRes> = {
     "notionDatabaseId",
     "status",
     "isExportPDFEnabled",
+    "regularPrice",
+    "publisher",
+    "publishedAt",
+    "ISBN",
   ],
 };
 export type UpdateBookReqPath = {
@@ -151,6 +162,10 @@ export type UpdateBookReqBody = {
   notionDatabaseId?: string;
   status?: "draft" | "pending" | "published" | "deleted";
   isExportPDFEnabled?: boolean;
+  regularPrice: number;
+  publisher: string;
+  publishedAt: string;
+  ISBN?: string;
 };
 export type UpdateBookReq = UpdateBookReqPath & UpdateBookReqBody;
 export type UpdateBookRes = {

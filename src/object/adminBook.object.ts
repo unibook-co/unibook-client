@@ -1,3 +1,4 @@
+import { BookOption } from "./book.object";
 import { UserObject } from "./user.object";
 
 export class AdminBookObject {
@@ -17,6 +18,10 @@ export class AdminBookObject {
   isExportPDFEnabled: boolean;
   createdAt: string;
   updatedAt: string;
+  publisher: string;
+  publishedAt: string;
+  ISBN?: string;
+  options: BookOption;
 
   constructor(data: {
     id: number;
@@ -35,6 +40,10 @@ export class AdminBookObject {
     }[];
     createdAt: string;
     updatedAt: string;
+    publisher: string;
+    publishedAt: string;
+    ISBN?: string;
+    options: BookOption;
   }) {
     this.id = data.id;
     this.title = data.title;
@@ -48,5 +57,9 @@ export class AdminBookObject {
     this.authorUsers = data.authorUsers;
     this.createdAt = data.createdAt;
     this.updatedAt = data.updatedAt;
+    this.publisher = data.publisher;
+    this.publishedAt = data.publishedAt;
+    this.ISBN = data.ISBN;
+    this.options = data.options;
   }
 }
