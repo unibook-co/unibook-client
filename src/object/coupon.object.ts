@@ -21,7 +21,7 @@ export class CouponObject {
   code: string;
   name: string;
   description?: string;
-  target: CouponTarget;
+  targets: CouponTarget[];
   discount: CouponDiscount;
   status: "active" | "expired" | "used" | "deleted";
   quota: number;
@@ -34,7 +34,7 @@ export class CouponObject {
     code: string;
     name: string;
     description?: string;
-    target: CouponTarget;
+    targets: CouponTarget[];
     discount: CouponDiscount;
     status: "active" | "expired" | "used" | "deleted";
     quota: number;
@@ -46,7 +46,7 @@ export class CouponObject {
     this.code = data.code;
     this.name = data.name;
     this.description = data.description;
-    this.target = data.target;
+    this.targets = data.targets;
     this.discount = data.discount;
     this.status = data.status;
     this.quota = data.quota;
