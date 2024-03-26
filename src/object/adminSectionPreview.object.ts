@@ -7,6 +7,7 @@ export class AdminSectionPreviewObject {
   children?: AdminSectionPreviewObject[];
   order: number;
   isIntroduction: boolean;
+  isPreviewAble: boolean;
   cachedAt: string;
   cachedHtmlZipFileUrl?: string;
 
@@ -19,6 +20,7 @@ export class AdminSectionPreviewObject {
     children?: AdminSectionPreviewObject[];
     order: number;
     isIntroduction: boolean;
+    isPreviewAble: boolean;
     cachedAt: string;
     cachedHtmlZipFileUrl?: string;
   }) {
@@ -30,6 +32,7 @@ export class AdminSectionPreviewObject {
     this.children = data.children;
     this.order = data.order;
     this.isIntroduction = data.isIntroduction;
+    this.isPreviewAble = data.isPreviewAble;
     this.cachedAt = data.cachedAt;
     this.cachedHtmlZipFileUrl = data.cachedHtmlZipFileUrl;
   }

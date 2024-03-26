@@ -10,6 +10,7 @@ export class SectionObject {
   children?: SectionPreviewObject[];
   order: number;
   cachedAt: string;
+  isPreviewAble: boolean;
 
   constructor(data: {
     id: number;
@@ -21,6 +22,7 @@ export class SectionObject {
     children?: SectionPreviewObject[];
     order: number;
     cachedAt: string;
+    isPreviewAble: boolean;
   }) {
     this.id = data.id;
     this.title = data.title;
@@ -31,5 +33,6 @@ export class SectionObject {
     this.children = data.children;
     this.order = data.order;
     this.cachedAt = data.cachedAt;
+    this.isPreviewAble = data.isPreviewAble;
   }
 }

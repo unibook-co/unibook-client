@@ -10,14 +10,17 @@ export const CreateUserOrder: Endpoint<CreateUserOrderReq, CreateUserOrderRes> =
     method: "POST",
     path: (e) => `/users/${e.userId}/orders`,
     pathParams: ["userId"],
-    bodyParams: ["bookId"],
+    bodyParams: ["bookId", "couponCode"],
   };
 export type CreateUserOrderReqPath = {
   userId: number | string;
 };
-export type CreateUserOrderReq = CreateUserOrderReqPath & {
+export type CreateUserOrderReqBody = {
   bookId: number | string;
+  couponCode?: string;
 };
+export type CreateUserOrderReq = CreateUserOrderReqPath &
+  CreateUserOrderReqBody;
 export type CreateUserOrderRes = {
   order: OrderObject;
 };

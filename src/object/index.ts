@@ -15,3 +15,6 @@ export * from "./blockMemo.object";
 export * from "./childBlockMemo.object";
 export * from "./parentBlockMemo.object";
 export * from "./userSetting.object";
+export * from "./coupon.object";
+export * from "./couponLog.object";
+export * from "./couponUseLog.object";
