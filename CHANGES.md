@@ -10,6 +10,12 @@
 
 # 변경사항
 
+## `1.0.42`
+
+### Object
+
+* `AdminBookObject`에 `regularPrice: number` 추가
+
 ## `v1.0.41`
 
 ### Object
