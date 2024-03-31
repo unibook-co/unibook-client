@@ -10,6 +10,30 @@
 
 # 변경사항
 
+## `v1.0.41`
+
+### Object
+
+* `CouponUseLogObject` 타입 변경 ⚠️
+
+  * before
+
+    ```typescript
+    type CouponUseLogObject = {
+        ...
+        bookId: number;
+    };
+    ```
+
+  * after
+
+    ```typescript
+    type CouponUseLogObject = {
+        ...
+        orderId: number;
+    };
+    ```
+
 ## `v1.0.40`
 
 ### Endpoint
