@@ -10,6 +10,38 @@
 
 # 변경사항
 
+## `v1.0.41`
+
+### Object
+
+* `CouponUseLogObject` 타입 변경 ⚠️
+
+  * before
+
+    ```typescript
+    type CouponUseLogObject = {
+        ...
+        bookId: number;
+    };
+    ```
+
+  * after
+
+    ```typescript
+    type CouponUseLogObject = {
+        ...
+        orderId: number;
+    };
+    ```
+
+## `v1.0.40`
+
+### Endpoint
+
+* `ApproveUserOrderReqBody` 타입 추가
+* `ApproveUserOrderReqBody`에 `couponCodes?: string[]` 추가
+* `CreateUserOrderReqBody`에서 `couponCode` 삭제
+
 ## `v1.0.39`
 
 * `CreateCouponReqBody`, `UpdateCouponReqBody` 타입 변경 ⚠️
