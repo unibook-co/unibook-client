@@ -10,14 +10,13 @@ export const CreateUserOrder: Endpoint<CreateUserOrderReq, CreateUserOrderRes> =
     method: "POST",
     path: (e) => `/users/${e.userId}/orders`,
     pathParams: ["userId"],
-    bodyParams: ["bookId", "couponCode"],
+    bodyParams: ["bookId"],
   };
 export type CreateUserOrderReqPath = {
   userId: number | string;
 };
 export type CreateUserOrderReqBody = {
   bookId: number | string;
-  couponCode?: string;
 };
 export type CreateUserOrderReq = CreateUserOrderReqPath &
   CreateUserOrderReqBody;
@@ -60,16 +59,19 @@ export const ApproveUserOrder: Endpoint<
   method: "POST",
   path: (e) => `/users/${e.userId}/orders/${e.orderId}/approve`,
   pathParams: ["userId", "orderId"],
-  bodyParams: ["paymentKey", "amount"],
+  bodyParams: ["paymentKey", "amount", "couponCodes"],
 };
 export type ApproveUserOrderReqPath = {
   userId: number | string;
   orderId: number | string;
 };
-export type ApproveUserOrderReq = ApproveUserOrderReqPath & {
+export type ApproveUserOrderReqBody = {
   paymentKey: string;
   amount: number;
+  couponCodes?: string[];
 };
+export type ApproveUserOrderReq = ApproveUserOrderReqPath &
+  ApproveUserOrderReqBody;
 export type ApproveUserOrderRes = {
   result: "success";
   order: OrderObject;
