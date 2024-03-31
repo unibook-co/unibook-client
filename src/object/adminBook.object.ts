@@ -1,11 +1,12 @@
-import { BookOption } from "./book.object";
+import { BookObject, BookOption } from "./book.object";
 import { UserObject } from "./user.object";
 
-export class AdminBookObject {
+export class AdminBookObject implements BookObject {
   id: number;
   title: string;
   author: string;
   description: string;
+  regularPrice: number;
   price: number;
   coverImage: string;
   notionDatabaseId: string;
@@ -28,6 +29,7 @@ export class AdminBookObject {
     title: string;
     author: string;
     description: string;
+    regularPrice: number;
     price: number;
     coverImage: string;
     notionDatabaseId: string;
@@ -49,6 +51,7 @@ export class AdminBookObject {
     this.title = data.title;
     this.author = data.author;
     this.description = data.description;
+    this.regularPrice = data.regularPrice;
     this.price = data.price;
     this.coverImage = data.coverImage;
     this.notionDatabaseId = data.notionDatabaseId;
