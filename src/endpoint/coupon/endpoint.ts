@@ -72,7 +72,7 @@ export const CreateCoupon: Endpoint<CreateCouponReq, CreateCouponRes> = {
     "name",
     "code",
     "description",
-    "target",
+    "targets",
     "discount",
     "status",
     "quota",
@@ -84,7 +84,7 @@ export type CreateCouponReqBody = {
   code: string;
   name: string;
   description?: string;
-  target: CouponTarget;
+  targets: CouponTarget[];
   discount: CouponDiscount;
   status: CouponObject["status"];
   quota: number;
@@ -107,7 +107,7 @@ export const UpdateCoupon: Endpoint<UpdateCouponReq, UpdateCouponRes> = {
   bodyParams: [
     "name",
     "description",
-    "target",
+    "targets",
     "discount",
     "status",
     "quota",
@@ -121,7 +121,7 @@ export type UpdateCouponReqPath = {
 export type UpdateCouponReqBody = {
   name?: string;
   description?: string;
-  target?: CouponTarget;
+  targets?: CouponTarget[];
   discount?: CouponDiscount;
   status?: CouponObject["status"];
   quota?: number;

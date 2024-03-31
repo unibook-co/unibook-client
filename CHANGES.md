@@ -10,6 +10,38 @@
 
 # 변경사항
 
+## `v1.0.39`
+
+* `CreateCouponReqBody`, `UpdateCouponReqBody` 타입 변경 ⚠️
+
+  * before
+
+    ```typescript
+    type CreateCouponReqBody = {
+        ...
+        target: CouponTarget;
+    };
+
+    type UpdateBookReqBody = {
+        ...
+        target: CouponTarget;
+    };
+    ```
+
+  * after
+
+    ```typescript
+    type CreateCouponReqBody = {
+        ...
+        targets: CouponTarget[];
+    };
+
+    type UpdateBookReqBody = {
+        ...
+        targets: CouponTarget[];
+    };
+    ```
+
 ## `v1.0.38`
 
 * `UpdateBookReqBody` 타입 변경 ⚠️
